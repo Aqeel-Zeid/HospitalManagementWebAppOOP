@@ -18,7 +18,7 @@ $(document).ready(function() {
                     success: function (responseText)
                         {
                              $('#AjaxResponse').html(responseText);
-                            console.log(responseText);
+                            //console.log(responseText);
                         }
                 })
             }
@@ -29,8 +29,8 @@ $(document).ready(function() {
         function ()
         {
             $('#AjaxResponse').hide();
-            console.log('Hide the Ajax Stuff');
-            console.log('Just For The Pull Request')
+
+
         }
     )
 
