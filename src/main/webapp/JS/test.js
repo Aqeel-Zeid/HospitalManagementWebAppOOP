@@ -29,6 +29,7 @@ $(document).ready(function() {
         function ()
         {
             $('#AjaxResponse').hide();
+            console.log('Hide the Ajax Stuff')
         }
     )
 
