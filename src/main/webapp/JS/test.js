@@ -1,8 +1,8 @@
-console.log("Hello World");
+//console.log("Hello World");
 
 
 $(document).ready(function() {
-    console.log("Hii");
+   // console.log("Hii");
 
         $('#docField').click
         ( function () {
@@ -24,11 +24,20 @@ $(document).ready(function() {
             }
         });
 
-    $('#docField').blur
+    $('#doctorType').click
     (
         function ()
         {
-            $('#AjaxResponse').hide();
+            if($("#docField").prop("checked") === true)
+            {
+                $('#AjaxResponse').show();
+            }else
+                {
+                    $('#AjaxResponse').hide();
+                }
+
+
+
 
 
         }

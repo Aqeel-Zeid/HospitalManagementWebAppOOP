@@ -9,6 +9,7 @@
 <h2>Welcome Page</h2>
 
     <a href="SignUpController">SignUp</a>
+    <a href="LoginController">LogIN</a>
 
 </body>
 </html>

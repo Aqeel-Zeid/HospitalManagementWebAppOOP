@@ -1,8 +1,10 @@
 package com.hospitalManagement.Controller.admin;
 
+import com.hospitalManagement.Model.Doctor;
 import com.hospitalManagement.Model.User;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,7 +44,28 @@ public class SignUpController extends HttpServlet {
             NewUser.addToDB();
 
 
-        }
+        }else
+            {
+                Doctor NewDoctor = new Doctor(
+                        request.getParameter("Name"),
+                        request.getParameter("Email"),
+                        request.getParameter("Address"),
+                        request.getParameter("Password1"),
+                        request.getParameter("Password2"),
+                        request.getParameter("Phone"),
+                        request.getParameter("RecoveryEmail"),
+                        request.getParameter("NIC"),
+                        request.getParameter("Type"),
+                        request.getParameter("DocType")
+                );
+                NewDoctor.validate();
+                NewDoctor.addToDB();
+            }
+
+            System.out.println();
+            RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/login.jsp");
+            rd.forward(request,response);
+
 
 
 
