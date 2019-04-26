@@ -61,7 +61,7 @@ CREATE TABLE `user` (
   `recoveryEmail` varchar(100) DEFAULT NULL,
   `Phone` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +70,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Aqeel Zeid','973291963V','304/1,muruthagahamula,Gelioya','aqeelaqeelzeid@gmail.com','Aqeel_2563',NULL,NULL,NULL),(2,'Amaani Zeid','983291963V','304/1,Buwelikada Road,Gelioya','amaanizeid@gmail.com','Amaani_2563',NULL,NULL,NULL),(3,'Amaani Zeid','983291963V','304/1,Buwelikada Road,Gelioya','amaanizeid@gmail.com','Amaani_2563',NULL,NULL,NULL),(4,'name','NIC','Address','email','password','Pharmacist','recovery','Phone'),(5,'Jamers','Earl','Addressss','james email','password','Doctor','recovery@','073'),(6,'Karl','NIC','Address','email','password','Doctor','drogon2','Phone'),(7,'Karl','45678','Address','email','password','Doctor','drogon2','Phone'),(8,'Karl','4567856','Address','email','password','Doctor','drogon2','Phone'),(9,'Nisal','987654567','Address','email','password','Doctor','recovery','Phone'),(10,'Zimwambe','456734524','Address','email@em','password','Doctor','recovery@','Phone'),(11,'Karls','456722222','Address','email','password','Doctor','recovery','Phone'),(12,'klis','973291864V','Address','email','password','Doctor','recovery','Phone'),(13,'caas','973291963V','Address','email','password','Doctor','recovery','Phone'),(14,'name898','973291964V','Address','email','password','Doctor','recovery','Phone'),(15,'Dr Nose','78675645','2323','email','password','Doctor','recovery','Phone'),(16,'Normal Doc','456732','2323','email','password','Doctor','recovery','Phone'),(17,'name23','2345','2323','email','password','Doctor','recovery','Phone');
+INSERT INTO `user` VALUES (1,'Aqeel Zeid','973291963V','304/1,muruthagahamula,Gelioya','aqeelaqeelzeid@gmail.com','Aqeel_2563',NULL,NULL,NULL),(2,'Amaani Zeid','983291963V','304/1,Buwelikada Road,Gelioya','amaanizeid@gmail.com','Amaani_2563',NULL,NULL,NULL),(3,'Amaani Zeid','983291963V','304/1,Buwelikada Road,Gelioya','amaanizeid@gmail.com','Amaani_2563',NULL,NULL,NULL),(4,'name','NIC','Address','email','password','Pharmacist','recovery','Phone'),(5,'Jamers','Earl','Addressss','james email','password','Doctor','recovery@','073'),(6,'Karl','NIC','Address','email','password','Doctor','drogon2','Phone'),(7,'Karl','45678','Address','email','password','Doctor','drogon2','Phone'),(8,'Karl','4567856','Address','email','password','Doctor','drogon2','Phone'),(9,'Nisal','987654567','Address','email','password','Doctor','recovery','Phone'),(10,'Zimwambe','456734524','Address','email@em','password','Doctor','recovery@','Phone'),(11,'Karls','456722222','Address','email','password','Doctor','recovery','Phone'),(12,'klis','973291864V','Address','email','password','Doctor','recovery','Phone'),(13,'caas','973291963V','Address','email','password','Doctor','recovery','Phone'),(14,'name898','973291964V','Address','email','password','Doctor','recovery','Phone'),(15,'Dr Nose','78675645','2323','email','password','Doctor','recovery','Phone'),(16,'Normal Doc','456732','2323','email','password','Doctor','recovery','Phone'),(17,'name23','2345','2323','email','password','Doctor','recovery','Phone'),(18,'Mr.Receptionist','987291963V','some Address','receptionist@gmail.com','ÑŠ·�ýÙ† ¾Š\"Qùy5','Receptionist','receptionist2@gmail.com','0764619998');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -91,4 +91,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-26 15:48:42
+-- Dump completed on 2019-04-26 17:58:33
