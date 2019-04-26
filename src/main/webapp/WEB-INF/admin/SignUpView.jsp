@@ -16,23 +16,25 @@
     <h1>Register User</h1>
     <form name="signUp" action="SignUpController" method="post">
 
-        <section>
+        <section id = "doctorType">
         <label>Type</label>
          <br>
-            <input type="radio" name="Type" value="Receptionist"  >
+            <input type="radio" name="Type" value="Receptionist"  id="recField" >
             <label>Receptionist</label>
          <br>
             <input type="radio" name="Type" value="Doctor" id="docField">
             <label>Doctor</label>
          <br>
-            <input type="radio" name="Type" value="Pharmacist">
+            <input type="radio" name="Type" value="Pharmacist" id="pharmField">
             <label>Pharmacist</label>
          <br>
-            <input type="radio" name="Type" value="LabAssistant">
+            <input type="radio" name="Type" value="LabAssistant" id="labField">
             <label>LabAssistant</label>
         </section>
 
-        <div  id="AjaxResponse" ></div>
+        <div  id="AjaxResponse" >
+
+        </div>
 
         <br>
         <label>First Name</label>

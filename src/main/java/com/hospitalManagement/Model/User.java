@@ -16,6 +16,7 @@ public class User {
             String RecoveryEmail;
             String NIC;
             String Type;
+            int ID;
 
             public User(String name, String email, String address, String password1, String password2, String phone, String recoveryEmail, String NIC, String type) {
                 Name = name;

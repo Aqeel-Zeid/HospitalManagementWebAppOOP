@@ -17,9 +17,26 @@ public class SignUpAjax extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         try {
-            System.out.println(request.getParameter("ajax"));
-            out.println("<h3>Sent from Ajax Call</h3>");
-        } catch (NullPointerException e) {
+            //System.out.println(request.getParameter("ajax"));
+            out.println("      <label>Type</label>\n" +
+                    "                <br>\n" +
+                    "                <input type=\"radio\" name=\"DocType\" value=\"Heart Specialist\"  >\n" +
+                    "                <label>Heart Specialist</label>\n" +
+                    "                <br>\n" +
+                    "                <input type=\"radio\" name=\"DocType\" value=\"Gynaecologist\">\n" +
+                    "                <label>Gynaecologist</label>\n" +
+                    "                <br>\n" +
+                    "                <input type=\"radio\" name=\"DocType\" value=\"Eye Specialist\">\n" +
+                    "                <label>Eye Specialist</label>\n" +
+                    "                <br>\n" +
+                    "                <input type=\"radio\" name=\"DocType\" value=\"Ears Nose And Throat Specialist\">\n" +
+                    "                <label>Ears Nose And Throat Specialist</label>\n" +
+                    "                <br>\n" +
+                    "                <input type=\"radio\" name=\"DocType\" value=\"General\">\n" +
+                    "                <label>General</label>\n" +
+                    "                <br>");
+        } catch (NullPointerException e)
+        {
             e.printStackTrace();
         }
 
