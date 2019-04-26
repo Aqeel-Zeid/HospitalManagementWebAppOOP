@@ -4,6 +4,7 @@ import com.hospitalManagement.Model.Doctor;
 import com.hospitalManagement.Model.User;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -61,6 +62,9 @@ public class SignUpController extends HttpServlet {
                 NewDoctor.addToDB();
             }
 
+            System.out.println();
+            RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/login.jsp");
+            rd.forward(request,response);
 
 
 
