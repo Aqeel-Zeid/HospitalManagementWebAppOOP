@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.mysql.cj.Session" %>
+<%@ page import="com.hospitalManagement.Model.User" %><%--
   Created by IntelliJ IDEA.
   User: Aqeel Zeid
   Date: 26/04/2019
@@ -12,5 +13,12 @@
 </head>
 <body>
         <h1>Receptionist UI</h1>
+        <h2>
+            <%
+               User LoggedInUSer =  (User) request.getSession().getAttribute("SESSION_user");
+                String email = LoggedInUSer.getEmail();
+            %>
+            <%=  email %>
+        </h2>
 </body>
 </html>

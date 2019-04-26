@@ -32,4 +32,20 @@ public class Doctor extends User {
 
 
     }
+
+    @Override
+    public void getUserFromDB(String email2) {
+        super.getUserFromDB(email2);
+        String sql = "SELECT * FROM doctor WHERE id = '" + this.ID + "';";
+        ResultSet rs = DatabaseConnector.selectQueryDB(sql);
+        try {
+            while (rs.next())
+            {
+                this.Speciality = rs.getString("speciality");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
 }

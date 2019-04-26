@@ -145,6 +145,7 @@ public class User {
                 this.Phone = rs.getString("phone");
                 this.Type = rs.getString("type");
                 this.Address = rs.getString("Address");
+                this.ID = rs.getInt("ID");
             }
         } catch (Exception e) {
             e.printStackTrace();
