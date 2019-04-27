@@ -75,6 +75,33 @@ INSERT INTO `user` VALUES (1,'Aqeel Zeid','973291963V','304/1,muruthagahamula,Ge
 UNLOCK TABLES;
 
 --
+-- Table structure for table `work`
+--
+
+DROP TABLE IF EXISTS `work`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `work` (
+  `doctor` int(11) NOT NULL,
+  `date` date DEFAULT NULL,
+  `appointmentLimit` int(11) DEFAULT NULL,
+  `ArrivalTime` datetime DEFAULT NULL,
+  `AllocatedTimePerSession` int(11) DEFAULT NULL,
+  PRIMARY KEY (`doctor`),
+  CONSTRAINT `doctor` FOREIGN KEY (`doctor`) REFERENCES `doctor` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `work`
+--
+
+LOCK TABLES `work` WRITE;
+/*!40000 ALTER TABLE `work` DISABLE KEYS */;
+/*!40000 ALTER TABLE `work` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping events for database 'hospital_management_db'
 --
 
@@ -91,4 +118,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-26 17:58:33
+-- Dump completed on 2019-04-27 14:05:43
