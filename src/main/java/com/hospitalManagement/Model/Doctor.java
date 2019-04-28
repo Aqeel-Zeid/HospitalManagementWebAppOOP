@@ -4,6 +4,8 @@ import com.hospitalManagement.util.DB.DatabaseConnector;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Doctor extends User {
     String Speciality;
@@ -46,6 +48,25 @@ public class Doctor extends User {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    public List<WorkDay> getAvailableRooms(String date)
+    {
+        String sql = "CALL GetALLFreeTimeSlots('"+ this.Speciality +"','"+ date +"')";
+        ResultSet rs = DatabaseConnector.selectQueryDB(sql);
+        List<WorkDay> TimeSlots = new ArrayList<>();
+        WorkDay temDay;
+        try {
+            while (rs.next())
+            {
+                temDay = new WorkDay(rs.getInt("id"),rs.getString("start"),rs.getString("end"),rs.getString("Name"));
+                TimeSlots.add(temDay);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return TimeSlots;
 
     }
 }

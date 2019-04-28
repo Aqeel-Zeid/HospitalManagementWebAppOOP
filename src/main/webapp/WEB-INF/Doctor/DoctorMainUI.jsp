@@ -11,6 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-
+        <h1>Doctor Main Menu UI</h1>
+        <a href="WorkingDayUIServlet"><h2>Visiting Dates</h2></a>
 </body>
 </html>
