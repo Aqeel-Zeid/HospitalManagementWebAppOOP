@@ -32,6 +32,7 @@ public class WorkingDayAjaxServlet extends HttpServlet {
             for(WorkDay tempDay : list)
             {
                 out.println("<section>");
+                out.println("<input type=\"checkbox\" name=\"timeSlot\" value=\""+tempDay.getId()+"\">");
                 out.println("<h3>Room</h3>"  + "<h4>" + tempDay.getName()+"</h4>" );
                 out.println("<h3>Start</h3>" +  "<h4>" + tempDay.getStart()+"</h4>" );
                 out.println("<h3>End</h3>" +  "<h4>" + tempDay.getEnd()+"</h4>" );

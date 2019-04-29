@@ -69,4 +69,30 @@ public class Doctor extends User {
         return TimeSlots;
 
     }
+
+    public  ArrayList<WorkDay> getWorkingDays()
+    {
+        ArrayList<WorkDay> workingDays = new ArrayList<>();
+        String sql = "SELECT * \n" +
+                    "FROM work w , timeslot t\n" +
+                    "WHERE w.timeslot = t.id\n" +
+                    "AND w.doctor = '"+this.ID+"'";
+        ResultSet rs = DatabaseConnector.selectQueryDB(sql);
+        try {
+            while (rs.next())
+            {
+                WorkDay wd = new WorkDay(rs.getInt("ID"),
+                        rs.getString("Start"),
+                        rs.getString("End"),
+                        rs.getString("Room"));
+                        wd.setDate(rs.getString("date"));
+                         workingDays.add(wd);
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return workingDays;
+    }
+
 }

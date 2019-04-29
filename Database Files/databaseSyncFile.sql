@@ -156,6 +156,7 @@ CREATE TABLE `work` (
 
 LOCK TABLES `work` WRITE;
 /*!40000 ALTER TABLE `work` DISABLE KEYS */;
+INSERT INTO `work` VALUES (25,'2019-04-29',NULL,NULL,NULL,17),(25,'2019-03-15',NULL,NULL,NULL,18),(25,'2019-04-27',NULL,NULL,NULL,18),(25,'2019-04-29',NULL,NULL,NULL,18),(25,'2019-04-27',NULL,NULL,NULL,19),(25,'2019-04-29',NULL,NULL,NULL,19);
 /*!40000 ALTER TABLE `work` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -204,6 +205,53 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `get_Work_Days_Of_Doc` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_Work_Days_Of_Doc`(
+IN p_doc INT ,
+OUT p_room VARCHAR(10),
+OUT p_start TIME,
+OUT p_end TIME,
+OUT p_id TIME,
+OUT p_date date
+)
+BEGIN
+ 
+
+ 
+Select start INTO p_start    
+from timeSlot t
+where ID IN (SELECT timeslot FROM work WHERE doctor = p_doc );
+
+Select end INTO p_end   
+from timeSlot t
+where ID IN (SELECT timeslot FROM work WHERE doctor = p_doc );
+
+Select room INTO p_room   
+from timeSlot t
+where ID IN (SELECT timeslot FROM work WHERE doctor = p_doc );
+
+Select id INTO p_id   
+from timeSlot t
+where ID IN (SELECT timeslot FROM work WHERE doctor = p_doc );
+
+
+
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -214,4 +262,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-28 16:02:32
+-- Dump completed on 2019-04-29  5:33:53
