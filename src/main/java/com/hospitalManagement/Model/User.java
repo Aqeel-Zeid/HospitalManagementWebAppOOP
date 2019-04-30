@@ -62,6 +62,38 @@ public class User {
         return 0;
     }
 
+    public static String getKey() {
+        return key;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public String getPassword2() {
+        return Password2;
+    }
+
+    public String getPhone() {
+        return Phone;
+    }
+
+    public String getRecoveryEmail() {
+        return RecoveryEmail;
+    }
+
+    public String getNIC() {
+        return NIC;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
     public User(String emailz) {
         //System.out.println("parameter : " + emailz);
 
@@ -79,9 +111,9 @@ public class User {
         System.out.println("Login Method With Password as Parameter :  " + password);
         try {
             String encryptedPassword = encrypt(password, key);
-            // System.out.println("Encrypted Version of Password : " + encryptedPassword);
+             //System.out.println("Encrypted Version of Password : " + encryptedPassword);
             // System.out.println("Encrypted Version of Password  from User : " + this.Password1);
-            // System.out.println(" if( this.Password1.equals(encryptedPassword)) : " + this.Password1.equals(encryptedPassword));
+             //System.out.println(" if( this.Password1.equals(encryptedPassword)) : " + this.Password1.equals(encryptedPassword));
             if (this.Password1.equals(encryptedPassword)) return true;
             else return false;
         } catch (Exception e) {

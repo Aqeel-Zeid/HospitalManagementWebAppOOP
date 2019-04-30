@@ -16,9 +16,10 @@
         <h2>
             <%
                User LoggedInUSer =  (User) request.getSession().getAttribute("SESSION_user");
-                String email = LoggedInUSer.getEmail();
+
             %>
-            <%=  email %>
         </h2>
+        <a href="RegisterPatientController">Register Patient</a>
+        <a href="BookAppointmentServlet">Book Appointment</a>
 </body>
 </html>

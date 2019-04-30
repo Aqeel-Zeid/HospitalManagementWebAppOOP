@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.Console;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -32,6 +33,7 @@ public class LoginController extends HttpServlet {
         if (isLogin) {
 
             HttpSession mySession = request.getSession();
+            System.out.println("Logged IN");
 
             String type = newUser.getType();
             switch (type) {
@@ -51,17 +53,17 @@ public class LoginController extends HttpServlet {
                     rd3.forward(request, response);
                     break;
                 case "Doctor":
-                    Doctor newDoc ;
-                    newDoc = (Doctor) newUser;
-                    newUser.getUserFromDB(newUser.getEmail());
-                    mySession.setAttribute("SESSION_user", newUser);
+                    Doctor newDoc = new Doctor( newUser.getName(),newUser.getEmail(),newUser.getAddress(),newUser.getPassword1(),newUser.getPassword2(),newUser.getPhone(),newUser.getRecoveryEmail(),newUser.getNIC(),newUser.getType(),"") ;
+                    newDoc.getUserFromDB(emailFromField);
+                    mySession.setAttribute("SESSION_user", newDoc);
 
                     RequestDispatcher rd4 = request.getRequestDispatcher("WEB-INF/Doctor/DoctorMainUI.jsp");
                     rd4.forward(request, response);
                     break;
             }
         } else {
-
+                PrintWriter pw = response.getWriter();
+                pw.println("<h3>Incorrect Password Or User Name</h3>");
         }
         RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/login.jsp");
         rd.forward(request,response);
