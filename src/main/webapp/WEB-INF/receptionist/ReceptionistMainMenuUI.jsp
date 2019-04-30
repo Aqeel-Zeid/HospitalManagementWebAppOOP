@@ -20,6 +20,6 @@
             %>
         </h2>
         <a href="RegisterPatientController">Register Patient</a>
-
+        <a href="BookAppointmentServlet">Book Appointment</a>
 </body>
 </html>

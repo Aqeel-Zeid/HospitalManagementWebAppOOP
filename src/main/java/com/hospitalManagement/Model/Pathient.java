@@ -2,6 +2,9 @@ package com.hospitalManagement.Model;
 
 import com.hospitalManagement.util.DB.DatabaseConnector;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Pathient {
 
     String FirstName ;
@@ -11,8 +14,15 @@ public class Pathient {
     String Phone ;
     String Sex ;
     String BloodGroup ;
+
+    public Pathient(String fullName, String phone) {
+        FullName = fullName;
+        Phone = phone;
+    }
+
     String[] Allergies ;
     String[] AllergieDescriptions ;
+    int ID;
 
     public Pathient(String firstName, String fullName, String DOB, String address, String phone, String sex, String bloodGroup, String[] allergies, String[] allergieDescriptions) {
         FirstName = firstName;
@@ -38,7 +48,40 @@ public class Pathient {
                 "'"+this.BloodGroup+"'" +
                 "); ";
         DatabaseConnector.insertQuery(sql);
+        this.getPatientFromDB();
+
     }
+
+    public void AddAllergyToDB()
+    {
+        for(int i = 0 ; i < this.Allergies.length ; i++)
+        {
+            String sql = "INSERT INTO ALLERGY (Allergy,Patient,Description) VALUES (' " +this.Allergies[i]+ "','" + this.ID + "',' "+this.AllergieDescriptions[i]+" ')";
+            DatabaseConnector.insertQuery(sql);
+        }
+
+    }
+
+    public void getPatientFromDB()
+    {
+        String sql2 = "SELECT * FROM Patient WHERE patient_Full_Name = '"+ this.FullName + "' AND PhoneNumber = '"+this.Phone+"'";
+        ResultSet rs = DatabaseConnector.selectQueryDB(sql2);
+        try {
+            while (rs.next())
+            {
+                this.ID = rs.getInt("PatientID");
+                this.FirstName = rs.getString("First_Name");
+                this.DOB = rs.getString("DOB");
+                this.Address = rs.getString("Address");
+                this.Sex = rs.getString("Sex");
+                this.BloodGroup = rs.getString("BloodGroup");
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 }
