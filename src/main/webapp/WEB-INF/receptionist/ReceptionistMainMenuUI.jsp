@@ -19,5 +19,7 @@
 
             %>
         </h2>
+        <a href="RegisterPatientController">Register Patient</a>
+
 </body>
 </html>

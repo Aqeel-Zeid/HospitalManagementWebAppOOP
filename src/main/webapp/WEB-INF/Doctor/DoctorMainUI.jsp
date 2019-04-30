@@ -29,7 +29,7 @@
             <%
                 for(WorkDay tempday : workDays)
                 {
-                    System.out.println(tempday.getName());
+                    //System.out.println(tempday.getName());
                     out.println( "<hr>"+"<label> Room </label>" + tempday.getName() + "<br>");
                     out.println("<label> Start </label>" +tempday.getStart() + "<br>");
                     out.println("<label> End </label>" +tempday.getEnd() +"<br>");
